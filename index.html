@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Primary Meta -->
+  <title>תפסיק לצ'טר. תתחיל להריץ. — Claude Code Bootcamp</title>
+  <meta name="description" content="למד להתקין ולהריץ את Claude Code (CLI) ישירות על המחשב שלך תוך 20 דקות. ללא שטויות, רק טרמינל. Workflow אג'נטי מהיום הראשון.">
+  <meta name="author" content="Claude Code Bootcamp">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <!-- Open Graph (Instagram / Social preview) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="תפסיק לצ'טר. תתחיל להריץ.">
+  <meta property="og:description" content="הקורס היחיד ל-Claude Code שבנוי סביב הרצה אג'נטית אמיתית — ללא החלפת טאבים, ללא העתק-הדבק, ללא חיכוך.">
+  <meta property="og:image" content="./assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="תפסיק לצ'טר. תתחיל להריץ.">
+  <meta name="twitter:description" content="הקורס היחיד ל-Claude Code שבנוי סביב הרצה אג'נטית אמיתית.">
+  <meta name="twitter:image" content="./assets/og-image.png">
+
+  <!-- Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN (JIT) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent:    '#E8FF47',
+            'accent-dim': '#C8DC30',
+            'term-green': '#4ADE80'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- GSAP — defer preserves DOM order so ScrollTrigger loads after GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Custom styles & logic -->
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════ -->
+  <nav id="nav" aria-label="ניווט ראשי">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">
+          <span>CC</span>://bootcamp
+        </a>
+        <a href="#pricing" class="nav-cta">להרשמה</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
+  <section id="hero" aria-label="כותרת ראשית">
+    <div class="container">
+      <div class="hero-content">
+
+        <p class="hero-label" data-animate>
+          Claude Code Bootcamp
+        </p>
+
+        <h1 class="hero-headline" data-animate aria-label="תפסיק לצ'טר. תתחיל להריץ.">
+          <span class="line">תפסיק לצ'טר.</span>
+          <span class="line">תתחיל להריץ.</span>
+        </h1>
+
+        <p class="hero-sub" data-animate>
+          למד להתקין ולהריץ את Claude Code (CLI) ישירות על המחשב שלך תוך&nbsp;20&nbsp;דקות.
+          ללא שטויות, רק טרמינל. Workflow אג'נטי טהור מהיום הראשון.
+        </p>
+
+        <div class="hero-actions" data-animate>
+          <button class="btn-primary cta-btn" type="button">
+            גישה מיידית
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M13 7H1M7 1l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <a href="#curriculum" class="btn-ghost">
+            לסילבוס
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M6 1v10M1 6l5 5 5-5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>גלול</span>
+      <div class="scroll-chevron"></div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       ZERO-FOOTPRINT PROMISE
+  ═══════════════════════════════════════════════ -->
+  <section id="promise" class="section-pad" aria-label="למה זה שונה">
+    <div class="container">
+
+      <div class="promise-header" data-animate>
+        <p class="section-label">הבטחת האפס-חיכוך</p>
+        <h2 class="section-title">למה הבוטקמפ הזה<br>שונה מכולם</h2>
+        <p class="section-sub">
+          רוב הקורסים מלמדים אותך לכתוב פרומפטים. זה מלמד אותך להריץ.
+          שלושה שינויים שישנו את אופן העבודה שלך לתמיד.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+
+        <article class="pillar-card" data-animate>
+          <p class="pillar-number">01</p>
+          <h3 class="pillar-title">ללא החלפת<br>טאבים</h3>
+          <p class="pillar-body">
+            Claude Code גר בטרמינל שלך. ללא העתק-הדבק בין חלונות,
+            ללא אובדן קונטקסט. העורך שלך, השל שלך, פקודה אחת.
+          </p>
+        </article>
+
+        <article class="pillar-card" data-animate>
+          <p class="pillar-number">02</p>
+          <h3 class="pillar-title">ללא חיכוך<br>העתק-הדבק</h3>
+          <p class="pillar-body">
+            קבצים נקראים, נכתבים ומקומטים על ידי Claude ישירות.
+            תאר את התוצאה — הסוכן מטפל בשרשרת ההרצה.
+          </p>
+        </article>
+
+        <article class="pillar-card" data-animate>
+          <p class="pillar-number">03</p>
+          <h3 class="pillar-title">Workflow<br>אג'נטי טהור</h3>
+          <p class="pillar-body">
+            תן ל-Claude מטרה. תראה אותו משרשר כלים, מתכנן משימות,
+            מריץ טסטים, מתקן שגיאות ומשלח — בלי שתצטרך לפקח על כל צעד.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       CURRICULUM — TERMINAL BLOCK
+  ═══════════════════════════════════════════════ -->
+  <section id="curriculum" class="section-pad" aria-label="סילבוס הקורס">
+    <div class="container">
+
+      <div class="curriculum-header" data-animate>
+        <p class="section-label">מסלול הבוטקמפ</p>
+        <h2 class="section-title">שישה מודולים.<br>אפס זמן מבוזבז.</h2>
+        <p class="section-sub" style="margin-bottom: 3rem;">
+          כל מודול הוא סשן הרצה מעשי — לא הרצאה.
+          בסוף, תשלח משהו אמיתי לאוויר.
+        </p>
+      </div>
+
+      <!-- Terminal window -->
+      <div class="terminal-window" role="region" aria-label="מודולי הקורס בתצוגת טרמינל">
+
+        <!-- Chrome (decorative title bar) -->
+        <div class="terminal-chrome" aria-hidden="true">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title">terminal — claude-code --curriculum</span>
+        </div>
+
+        <!-- Terminal body -->
+        <div class="terminal-body">
+
+          <div class="terminal-line" data-animate>
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-cmd">claude-code --curriculum --verbose</span>
+          </div>
+
+          <div class="terminal-spacer"></div>
+
+          <div class="terminal-line" data-animate>
+            <span class="terminal-output">[LOADING]</span>
+            <span class="terminal-cmd" style="color: var(--text-muted);">Initializing course modules...</span>
+          </div>
+
+          <div class="terminal-spacer"></div>
+
+          <!-- Module 01 -->
+          <div class="module-row terminal-line" data-animate>
+            <span class="module-num">MODULE 01</span>
+            <span class="module-arrow">→</span>
+            <span class="module-name">החשיבה האג'נטית</span>
+          </div>
+          <div class="module-desc terminal-line" data-animate>
+            <span class="terminal-output">תפסיק לפרמפט. תתחיל לתזמר. מה זה Claude Code באמת.</span>
+          </div>
+
+          <!-- Module 02 -->
+          <div class="module-row terminal-line" data-animate>
+            <span class="module-num">MODULE 02</span>
+            <span class="module-arrow">→</span>
+            <span class="module-name">Workflow ממוקד טרמינל</span>
+          </div>
+          <div class="module-desc terminal-line" data-animate>
+            <span class="terminal-output">Node.js, VS Code, Claude CLI — התקנה מלאה, הגדרת הסביבה שלך.</span>
+          </div>
+
+          <!-- Module 03 -->
+          <div class="module-row terminal-line" data-animate>
+            <span class="module-num">MODULE 03</span>
+            <span class="module-arrow">→</span>
+            <span class="module-name">פעולות קבצים ומשימות מרובות שלבים</span>
+          </div>
+          <div class="module-desc terminal-line" data-animate>
+            <span class="terminal-output">תן ל-Claude לקרוא, לכתוב, לחפש ולרפקטר על פני כל הקוד-בייס.</span>
+          </div>
+
+          <!-- Module 04 -->
+          <div class="module-row terminal-line" data-animate>
+            <span class="module-num">MODULE 04</span>
+            <span class="module-arrow">→</span>
+            <span class="module-name">אינטגרציית Git וקומיטים אוטומטיים</span>
+          </div>
+          <div class="module-desc terminal-line" data-animate>
+            <span class="terminal-output">קומיטים אוטומטיים, אסטרטגיית branch, טיוטות PR — git, אבל אג'נטי.</span>
+          </div>
+
+          <!-- Module 05 -->
+          <div class="module-row terminal-line" data-animate>
+            <span class="module-num">MODULE 05</span>
+            <span class="module-arrow">→</span>
+            <span class="module-name">טיפול בשגיאות ודיבאגינג</span>
+          </div>
+          <div class="module-desc terminal-line" data-animate>
+            <span class="terminal-output">כשClaude נתקע — אתה מתקן מהר. אבחון, לולאה, התאוששות.</span>
+          </div>
+
+          <!-- Module 06 -->
+          <div class="module-row terminal-line" data-animate>
+            <span class="module-num">MODULE 06</span>
+            <span class="module-arrow">→</span>
+            <span class="module-name">פטרנים להרצה בפרודקשן</span>
+          </div>
+          <div class="module-desc terminal-line" data-animate>
+            <span class="terminal-output">בניית מערכת שלמה מאפס. פרויקט אמיתי. דדליין אמיתי. שלח לאוויר.</span>
+          </div>
+
+          <div class="terminal-spacer"></div>
+
+          <div class="terminal-line" data-animate>
+            <span class="terminal-success">[SUCCESS]</span>
+            <span class="terminal-cmd" style="color: var(--text-muted);">6 modules ready for execution.</span>
+            <span class="cursor-blink" aria-hidden="true"></span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PRICING
+  ═══════════════════════════════════════════════ -->
+  <section id="pricing" class="section-pad" aria-label="מחיר">
+    <div class="container">
+
+      <div class="pricing-header" data-animate style="text-align: center; margin-bottom: 0;">
+        <p class="section-label" style="justify-content: center;">מחיר</p>
+        <h2 class="section-title" style="text-align: center;">מחיר אחד.<br>הכל כלול.</h2>
+      </div>
+
+      <div class="pricing-wrapper">
+        <div class="pricing-card" data-animate>
+
+          <p class="pricing-badge">
+            <span style="color: var(--terminal-green);">●</span>
+            גישה מלאה
+          </p>
+
+          <div class="pricing-price" aria-label="מחיר: $49">$49</div>
+          <p class="pricing-price-note">תשלום חד-פעמי — גישה לכל החיים</p>
+
+          <div class="pricing-divider"></div>
+
+          <ul class="pricing-features" aria-label="מה כלול">
+            <li class="pricing-feature">
+              <span class="pricing-feature-icon" aria-hidden="true">✓</span>
+              6 מודולים ממוקדי הרצה
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature-icon" aria-hidden="true">✓</span>
+              גישה לכל החיים + כל עדכונים עתידיים
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature-icon" aria-hidden="true">✓</span>
+              גישה לקהילה הפרטית
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature-icon" aria-hidden="true">✓</span>
+              בונוס: תבניות CLAUDE.md ו-MCP starters
+            </li>
+          </ul>
+
+          <div class="pricing-divider"></div>
+
+          <!-- Claude Pro notice -->
+          <div class="pricing-notice" role="note" aria-label="דרישה מוקדמת">
+            <p class="pricing-notice-title">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style="flex-shrink:0">
+                <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.25"/>
+                <path d="M7 5v3M7 9.5v.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+              </svg>
+              דורש מנוי Claude Pro
+            </p>
+            <p class="pricing-notice-body">
+              Claude Code רץ על חשבון Claude שלך (~$20 לחודש).
+              הבוטקמפ מלמד אותך להשתמש בו — לא כלול במחיר זה.
+            </p>
+          </div>
+
+          <button class="btn-primary-full cta-btn" type="button" aria-label="קבל גישה מיידית לבוטקמפ">
+            גישה מיידית
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M13 7H1M7 1l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer id="footer" aria-label="פוטר">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">
+          נבנה על ידי <strong><!-- TODO: שם הסטודיו שלך --></strong> — Claude Code בפעולה.
+        </p>
+        <a
+          href="https://instagram.com/<!-- TODO: your_handle -->"
+          class="footer-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="עקוב באינסטגרם (נפתח בלשונית חדשה)"
+        >
+          <span class="arrow">↗</span> אינסטגרם
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SUCCESS MODAL
+  ═══════════════════════════════════════════════ -->
+  <div
+    id="modal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+    aria-labelledby="modal-title"
+    aria-describedby="modal-desc"
+  >
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="סגור חלון">✕</button>
+
+      <div class="modal-icon" aria-hidden="true">✓</div>
+
+      <h2 class="modal-title" id="modal-title">!נרשמת בהצלחה</h2>
+      <p class="modal-body" id="modal-desc">
+        מעביר אותך לתשלום…
+      </p>
+      <p class="modal-fallback">
+        לא הועברת?
+        <a href="#" id="checkout-link">לחץ כאן להמשך ↗</a>
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
